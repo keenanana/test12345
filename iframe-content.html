@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Content</title>
+    <script>
+        function changeParentFont() {
+            // Check if the iframe is allowed to access the parent
+            if (window.parent && window.parent.document) {
+                window.parent.document.body.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
+            }
+        }
+
+        // Call the function to change the font once the iframe content is loaded
+        window.onload = changeParentFont;
+    </script>
+</head>
+<body>
+    <h2>This is iframe content.</h2>
+    <p>When this iframe loads, it will attempt to change the font of the parent page.</p>
+</body>
+</html>
